@@ -21,12 +21,11 @@ readdirSync("./routes").map(r => app.use("/api/v1",require(`./routes/${r}`)))
 
 
 //server
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
 //connect to Db and start server
 mongoose
-        .set('strictQuery', true)
-        .connect(process.env.DATABASE)
+        .connect(process.env.DATABASE_ATLAS)
         .then(() => {
             app.listen(port, ()=>{
                 console.log(`Server Running on port ${port}`);
