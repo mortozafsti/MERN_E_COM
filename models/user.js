@@ -11,8 +11,7 @@ const userSchema = new Schema(
         email:{
             type:String,
             trim:true,
-            required:true,
-            unique:true,
+            required:true
         },
         password:{
             type:String,
@@ -32,5 +31,5 @@ const userSchema = new Schema(
     {timestamps: true, versionKey:false}
 );
 
-const User = mongoose.model("User",userSchema)
+const User = mongoose.model("users",userSchema)
 module.exports = User;
