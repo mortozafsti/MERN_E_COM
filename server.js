@@ -25,6 +25,7 @@ const port = process.env.port || 8000;
 
 //connect to Db and start server
 mongoose
+        .set('strictQuery', true)
         .connect(process.env.DATABASE)
         .then(() => {
             app.listen(port, ()=>{
